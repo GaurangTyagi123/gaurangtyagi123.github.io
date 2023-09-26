@@ -1,0 +1,90 @@
+$color-primary : #7f0d46;
+$color-secondary : #A4243B;
+$color-tertiary: #d9534f;
+
+$color-white-light : #eeeeee;
+$color-white-dark : #fff;
+$color-grey-light : #777;
+$color-grey-dark : #666;
+
+
+@keyframes slide {
+    0%{
+        transform: translateX(-5rem);
+        opacity: 0;
+    }
+    100%{
+        // transform: translateX(0rem);
+        opacity: 1;
+    }
+}
+@keyframes slide_vertical {
+    0%{
+        transform: translateY(-5rem);
+        opacity: 0;
+    }    
+    100%{
+        opacity: 1;
+    }
+}
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    // outline: 2px solid lime;
+    box-sizing: inherit;
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding: 10rem;
+    @media only screen and (max-width:81.25em){
+        font-size: 50%;
+    }
+    @media only screen and (max-width: 65.635em) {
+        font-size: 37.5%;
+    }
+    @media only screen and (max-width: 25em) {
+        font-size: 30%;
+    }
+    font-family: sans-serif;
+}
+body{
+    box-sizing: border-box;
+    padding: 0 2rem;
+    transition: all .3s ease-in-out ;
+    @media only screen and (max-width: 65.635em) {
+        padding: 0;
+    }
+}
+.container{
+    display: grid;
+    height: 100rem;
+    width: 100%;
+    grid-template-rows: minmax(10vh,1fr) minmax(70vh,1fr) minmax(100vh,max-content) 60vh 100vh minmax(80vh,1fr) 1fr 80vh 80vh;
+    grid-template-columns: repeat(2,1fr);
+    @media only screen and (max-width:81.25rem) {
+    grid-template-rows: minmax(10vh,1fr) minmax(60vh,1fr) minmax(100vh,max-content) 60vh 90vh minmax(80vh,1fr) 1fr 60vh 80vh;
+    }
+    @media only screen and (max-width: 65.635em) {
+        grid-template-rows: minmax(10vh,1fr) minmax(50vh,1fr) minmax(100vh,max-content) 60vh 80vh minmax(80vh,1fr) 1fr 50vh 70vh;
+    }
+    @media only screen and (max-width: 37.5em) {
+        grid-template-rows: minmax(0vh,1fr) minmax(50vh,1fr) minmax(110vh,max-content) 60vh 80vh minmax(80vh,1fr) 1fr 50vh 50vh;
+    }
+    @media only screen and (max-width: 25em) {
+        grid-template-rows: minmax(10vh,1fr) minmax(40vh,1fr) minmax(60vh,max-content) 40vh 70vh minmax(60vh,1fr) 1fr 50vh 30vh;
+    }
+    
+}
+section{
+    opacity: 0.3;
+    transition: all .3s ease-in-out;
+}
+.show{
+    opacity: 1;
+}
+
+::selection{
+    color:$color-primary;
+    background-color: white;
+}

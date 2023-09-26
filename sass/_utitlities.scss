@@ -1,0 +1,35 @@
+.-u-before{
+    position: relative;
+    margin-bottom: 5rem;
+    margin-left: .5rem;
+}
+.-u--white{
+    color:white !important;
+}
+.-u-before::before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0%;
+    height: .1rem;
+    background-color: $color-secondary;
+    z-index: 1;
+    border-radius: 5%;
+    transition: all .3s ease-in-out;
+}
+.-u-before:hover::before{
+    width: 33rem;
+}
+
+.-u-ptop{
+    padding-top: 2rem !important;
+}
+.-u--white{
+    color:$color-white-dark !important;
+    grid-column: 1/-1;
+}
+.-u--primary{
+    color:$color-primary;
+}

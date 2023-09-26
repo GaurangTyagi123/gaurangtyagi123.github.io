@@ -1,0 +1,18 @@
+{
+  "name": "prof_rkg",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile" : "node-sass sass/main.scss css/style.css -w",
+    "compress" : "node-sass sass/main.scss css/style.css --output-style compressed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^9.0.0"
+  }
+}
