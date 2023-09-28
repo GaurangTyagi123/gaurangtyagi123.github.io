@@ -63,7 +63,7 @@ body{
     grid-template-rows: minmax(10vh,1fr) minmax(70vh,1fr) minmax(100vh,max-content) 60vh 100vh minmax(80vh,1fr) 1fr 80vh 80vh;
     grid-template-columns: repeat(2,1fr);
     @media only screen and (max-width:81.25rem) {
-    grid-template-rows: minmax(10vh,1fr) minmax(60vh,1fr) minmax(100vh,max-content) 60vh 90vh minmax(80vh,1fr) 1fr 60vh 80vh;
+        grid-template-rows: minmax(10vh,1fr) minmax(60vh,1fr) minmax(100vh,max-content) 60vh 90vh minmax(80vh,1fr) 1fr 60vh 80vh;
     }
     @media only screen and (max-width: 65.635em) {
         grid-template-rows: minmax(10vh,1fr) minmax(50vh,1fr) minmax(100vh,max-content) 60vh 80vh minmax(80vh,1fr) 1fr 50vh 70vh;
@@ -73,6 +73,9 @@ body{
     }
     @media only screen and (max-width: 25em) {
         grid-template-rows: minmax(10vh,1fr) minmax(40vh,1fr) minmax(60vh,max-content) 40vh 70vh minmax(60vh,1fr) 1fr 50vh 30vh;
+    }
+    @media only screen and (orientation:landscape) {
+        grid-template-rows: minmax(10vh,1fr) 80vh minmax(100vh,max-content) 60vh 100vh minmax(80vh,1fr) 1fr 100vh 80vh;
     }
     
 }
