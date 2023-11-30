@@ -2,9 +2,9 @@
     text-transform: uppercase;
     font-size: 5rem;
 
-    @media only screen and (max-width:37.5rem) {
-        font-size: 3rem;
-    }
+    // @media only screen and (max-width:37.5rem) {
+    //     font-size: 3rem;
+    // }
 
     font-weight: 500;
     letter-spacing: .2rem;
@@ -26,24 +26,28 @@
     color: #000;
     animation: slide_vertical 1s ease-in-out;
 }
-.college{
+
+.college {
     grid-column: 1/-1;
-    &__list{
-        @media only screen and (max-width: 65.635em){
-            width: 100%;
-        }
-        @media only screen and (max-width: 65.635em){
+
+    &__list {
+        // @media only screen and (max-width: 65.635em) {
+        //     width: 100%;
+        // }
+
+        @media only screen and (max-width: 40.625em) {
             visibility: hidden;
+            width: 100%;
         }
 
         display: flex;
         position: fixed;
         background-color: white;
         height: 10vh;
-        width: 97.5%;
+        width: 100%;
         z-index: 10;
         column-gap: 2.5rem;
-        font-size: 1.6rem;
+        font-size: 1.3rem;
         font-weight: 500;
         text-transform: uppercase;
         align-items: center;
@@ -51,8 +55,10 @@
         list-style: none;
         box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .6);
         padding-right: 2rem;
-        
-        &__link:visited,&__link{
+        border-radius: 0 0 1.5rem 1.5rem;
+
+        &__link:visited,
+        &__link {
             height: 100%;
             text-decoration: none;
             color: $color-primary;
@@ -61,7 +67,8 @@
             align-items: center;
             justify-content: center;
         }
-        &__item{
+
+        &__item {
             display: inline-block;
             height: 100%;
             min-width: 10rem;
@@ -70,12 +77,22 @@
             overflow-wrap: break-word;
             text-align: center;
         }
-        &__item:hover,&__item--active{
+
+        &__item:hover {
             height: 100%;
             background-color: $color-primary;
             // border-radius: 1.5rem;
         }
-        &__item:hover &__link{
+        
+        &__item:hover &__link {
+            height: 100%;
+            color: white;
+        }
+        &__item--active{
+            height: 100%;
+            background-color: $color-primary;
+        }
+        &__item--active &__link{
             height: 100%;
             color: white;
         }
@@ -84,29 +101,52 @@
 
 
 .profile {
-    background-image: linear-gradient(180deg, $color-white-dark, $color-white-light);
-    // clip-path: polygon(0 10vh, 100% 0, 100% 100%, 0 100%);
+    background-image: linear-gradient(110deg, $color-white-dark, $color-white-light 50%, $color-secondary 50%);
     grid-column: 1/-1;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    @media only screen and (max-width:43.75em) {
+        background-image: linear-gradient(180deg, $color-white-dark, $color-white-light 60%, $color-secondary 60%);
+        flex-direction: column ;
+    }
     &__container {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
         height: 100%;
         width: 100%;
-        padding: 5rem 0;
+        padding: 5rem 25rem;
+
+        @media only screen and (max-width:43.75em) {
+            align-items: center;
+        }
+
+        // @media only screen and (max-width:50em) {
+        //     padding: 0;            
+        //     align-items: center;
+        // }
     }
 
+    // @media only screen and (max-width: 50em) {
+    //     background-image: linear-gradient(180deg, $color-white-dark 45%, $color-secondary 45%);
+    //     flex-direction: column;
+    // }
+    // @media only screen and (max-width:37.5em) and (orientation:portrait){
+    //     background-image: linear-gradient(180deg, $color-white-dark 50%, $color-secondary 50%);
+    // }
+
     &__photo {
-        margin-top: .5rem;
-        @media only screen and (orientation:landscape) {
-            margin-top: 1rem;
-        }
+        // @media only screen and (orientation:landscape) {
+        //     margin-top: 1rem;
+        // }
+
         width: 20rem;
         height: 20rem;
         border-radius: 50%;
-        clip-path: circle(50%);
+        clip-path: circle(50% at 50% 50%);
         transform: scale(1.08);
         margin-bottom: 3rem;
         position: relative;
@@ -114,6 +154,10 @@
         border: 1px solid $color-grey-light;
         transition: all .3s;
 
+        // @media only screen and (max-width:50em) {
+        //     width: 20rem;
+        //     height: 20rem;
+        // }
         &:hover {
             transform: scale(1);
             filter: brightness(100%);
@@ -122,7 +166,7 @@
     }
 
     &__name {
-        font-size: 2.2rem;
+        font-size: 2.1rem;
         font-weight: 600;
         text-transform: uppercase;
         color: lighten(black, 30%);
@@ -139,71 +183,45 @@
 }
 
 .contact {
-    grid-row: 3/4;
-    grid-column: 1/-1;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-content: center;
-    background-image: linear-gradient(110deg, $color-secondary 50%, $color-white-light 50%);
+    grid-template-rows: repeat(auto-fit,1fr);
+    height: 100%;
+    place-items: center;
 
-    @media only screen and (max-width:50em) {
-        background-image: linear-gradient(to right, $color-secondary 50%, $color-white-light 50%);
-
+    @media only screen and (max-width:43.75em) {
+       width: 90%;
+       height: 60%;
     }
-
-    @media only screen and (max-width:37.5em) {
-        display: grid;
-        ;
-        grid-template-columns: 1fr;
-        background-image: linear-gradient(to bottom, $color-secondary 50%, $color-white-light 50%);
+    @media only screen and (orientation:landscape) and (max-width:40.625em) {
+        height: 60%;
     }
+    
 
     &__heading {
-        font-size: 5rem;
+        font-size: 4rem;
         font-weight: 100;
         letter-spacing: .3rem;
         align-self: center;
-        padding-bottom: 1.5rem;
         color: $color-white-dark;
         border-bottom: 1px solid $color-white-dark;
         position: relative;
         overflow-wrap: break-word;
-
-        &::before {
-            content: "Contact Details";
-            display: inline-block;
-            width: 0%;
-            height: 100%;
-            z-index: 1;
-            position: absolute;
-            top: 0;
-            left: 0;
-            visibility: hidden;
-            overflow: hidden;
-            transition: all .1s ease-in-out;
-        }
-
-        &:hover::before {
-            background-color: $color-white-dark;
-            color: $color-primary;
-            width: 100%;
-            opacity: 1;
-            visibility: visible;
-            cursor: default;
+        
+        @media only screen and (max-width:43.75em) {
+            font-size: 3.5rem;
         }
     }
-
+    
     &__details {
-        padding-top: 1rem;
-        flex: 0 1 40rem;
+        height: 100%;
+        // flex: 0 1 40rem;
         display: flex;
         flex-direction: column;
-        row-gap: 10rem;
-        margin-left: 2rem;
+        align-items: baseline;
+        justify-content: space-evenly;
+        margin-right: 5rem;
+        text-wrap: balance;
 
-        @media only screen and (max-width:37.5em) {
-            row-gap: 5rem;
-        }
     }
 
     &__icon {
@@ -214,10 +232,13 @@
     }
 
     .detail {
-        font-size: 2rem;
+        font-size: 1.8rem;
         font-weight: 200;
         letter-spacing: .3rem;
         color: lighten($color-primary, 60%);
+        @media only screen and (max-width:43.75em) {
+            font-size: 1.6rem;
+        }
     }
 }
 
@@ -225,55 +246,63 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-
-    @media only screen and (max-width:37.5em) {
-        margin-top: 5rem;
-    }
-
-    gap: 10rem;
+    align-items: center;
+    justify-content: space-evenly;
+    grid-column: 1/-1;
+    background: linear-gradient(120deg, $color-secondary var(--bg), #eee var(--bg));
+    // gap: 10rem;
 
     &__container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        gap: 5rem;
+        place-items: center;
+        row-gap: 5rem;
         margin-left: 3.8rem;
-        // @media only screen and (max-width:1350px) {
-        //     column-gap: 2rem;
+
+        // @media only screen and (max-width:50em) {
+        //     padding-left: 5rem;
+        //     gap: 10rem;
         // }
     }
 
     &__heading {
-        font-size: 4rem;
-        width: max-content;
-        align-self: center;
+        font-size: 6.8rem;
+        font-family: "Poppins";
+        width: clamp(max-content,100%,50vw);
         padding: 1rem;
-        font-weight: 100;
+        font-weight: 300;
         letter-spacing: .3rem;
         margin: 1.5rem 0 0 4rem;
         color: $color-secondary;
-
         position: relative;
         border-bottom: 1px solid $color-secondary;
+        text-wrap: balance;
+
+        // @media only screen and (max-width:37.5em) {
+        //     font-size: 5rem;
+        //     margin: 0;
+        // }
     }
 
+
     .course {
-        font-size: 1.8rem;
+        font-size: 2.5rem;
         padding-bottom: 1rem;
         font-weight: 600;
         color: $color-grey-dark;
     }
 
     .year {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         color: $color-tertiary;
         font-style: italic;
 
     }
 
     .institution {
-        font-size: 1.2rem;
-        font-weight: 500;
+        font-size: 1.5rem;
+        width: 80%;
         font-family: 'Times New Roman', Times, serif;
         margin-top: 1.5rem;
         overflow-wrap: break-word;
@@ -282,6 +311,10 @@
 
     &__3 {
         grid-column: 1/-1;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        justify-content: center;
     }
 }
 
@@ -446,7 +479,6 @@
 .research {
     grid-column: -1/1;
     background-image: linear-gradient(to bottom, $color-white-light 55%, $color-white-dark);
-    overflow: scroll;
 
 
     &__container {
@@ -499,7 +531,7 @@
             color: darken($color-tertiary, 10%);
             width: 50%;
             align-self: center;
-            // padding-bottom: 2rem;
+            padding-bottom: 2rem;
             border-bottom: 1px solid $color-grey-dark;
         }
 
@@ -518,7 +550,6 @@
 
 .patentsPubs {
     background-image: linear-gradient(to right bottom, $color-primary, $color-secondary, $color-tertiary);
-    // clip-path: polygon(100% 0, 100% 80vh, 0 100%, 0 0);
     width: 100%;
     grid-column: 1/-1;
     text-align: center;
@@ -566,6 +597,10 @@
         margin-left: 2.5rem;
         overflow-wrap: break-word;
 
+        // @media only screen and (max-width:50em) {
+        //     margin: 0;
+        // }
+
         &>li {
             margin-top: .5rem;
         }
@@ -612,13 +647,15 @@
     grid-column: 1/-1;
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
     background-color: $color-white-light;
 
-    @media only screen and (max-width: 65.635em) {
-        align-items: center;
-        justify-content: center;
-    }
+    // @media only screen and (max-width: 65.635em) {
+    //     align-items: center;
+    //     justify-content: center;
+    // }
 
     &__heading {
         align-self: center;
@@ -627,7 +664,7 @@
         width: max-content;
         outline: 2px solid $color-secondary;
         box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, .6);
-
+        
         &:hover {
             outline-offset: 1rem;
             transform: scale(1.01);
@@ -652,23 +689,34 @@
 }
 
 .awards {
-    @media only screen and (max-width:37.5rem) {
-        grid-column: 1/-1;
-    }
+    // @media only screen and (max-width:50em) {
+    //     place-items: center;
+    // }
+    // @media only screen and (max-width:37.5rem) {
+    //     grid-column: 1/-1;
+    // }
 
     background-color: $color-secondary;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 5rem;
     justify-items: center;
     height: 100%;
+
+    @media only screen and (max-width:43.75em) {
+        grid-column: 1/-1;
+    }
 
     &__heading {
         font-size: 4rem;
         color: $color-white-light;
         border-bottom: 1px solid $color-white-dark;
         padding-bottom: 5rem;
+        // @media only screen and (max-width:50em) {
+        //     font-size: 2.4rem;
+        // } 
     }
 
     &__list {
@@ -679,6 +727,10 @@
         list-style: circle;
         margin-left: 2.5rem;
         overflow-wrap: break-word;
+        // @media only screen and (max-width:50em) {
+        //     font-size: 1.5rem;
+        //     margin: 0;
+        // }
 
         li {
             margin-bottom: 2.5rem;
@@ -687,30 +739,39 @@
 }
 
 .association {
-    @media only screen and (max-width:37.5rem) {
-        grid-column: 1/-1;
-    }
+    // @media only screen and (max-width:37.5rem) {
+    //     grid-column: 1/-1;
+    // }
 
     background-color: $color-white-light;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-items: flex-start;
-    justify-content: space-evenly;
-    height: 100%;
+    justify-content: center;
+    gap: 5rem;
 
+    @media only screen and (max-width:43.75em) {
+        grid-column: 1/-1;
+    }
     &__heading {
         font-size: 3rem;
         margin-top: -4rem;
-
-        @media only screen and (max-width:37.5rem) {
-            margin-top: 2rem;
-            padding-bottom: 3rem;
-        }
+        // @media only screen and (max-width:50em) {
+        //     margin:0;
+        //     font-size: 2.4rem;
+        // }
+        // @media only screen and (max-width:37.5rem) {
+        //     margin-top: 2rem;
+        //     padding-bottom: 3rem;
+        // }
 
         color: $color-grey-light;
         border-bottom: 1px solid black;
         padding-bottom: 5rem;
+        @media only screen and (max-width:43.75em) {
+            margin: 0;
+            padding:0;
+        }
     }
 
     &__list {
@@ -721,9 +782,9 @@
         list-style: circle;
         overflow-wrap: break-word;
 
-        @media only screen and (max-width:37.5rem) {
-            margin-top: 3rem;
-        }
+        // @media only screen and (max-width:37.5rem) {
+        //     margin-top: 3rem;
+        // }
 
         li {
             margin-bottom: 5rem;
@@ -733,7 +794,7 @@
 
 // password : Bksdp21@Ma17
 
-.btn{
+.btn {
     width: 15rem;
     background-color: $color-primary;
     display: flex;
@@ -745,16 +806,19 @@
     font-size: 1.6rem;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .6);
 
+    margin-top: 2rem;
     transition: all .3s ease-in-out;
-    margin-top:2rem;
 }
-.btn:hover{
+
+
+.btn:hover {
     color: $color-primary;
     background-color: $color-white-dark;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .3);
     outline: 1px solid $color-primary;
 }
-.hamburger{
+
+.hamburger {
     height: 10rem;
     width: 10rem;
     border-radius: 50%;
@@ -766,20 +830,24 @@
     margin-top: 5rem;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .6);
     display: none;
-    @media only screen and (max-width: 65.635em){
-        display: block;
+
+    @media only screen and (max-width: 40.625em) {
+        display: grid;
+        place-items: center;
+        grid-template-rows: repeat(2,1fr);
+        margin-right: 10rem;
     }
-    
-    &__label{
+
+    &__label {
         position: relative;
         display: inline-block;
         margin-top: 5rem;
-        left: 20%;
         width: 60%;
         height: .6rem;
         background-color: white;
     }
-    &__label::after{
+
+    &__label::after {
         content: "";
         display: inline-block;
         position: absolute;
@@ -787,10 +855,11 @@
         width: 100%;
         height: 100%;
         top: 1rem;
-        left: .1rem;
+        left: -.08rem;
         transition: all .3s ease-in-out;
     }
-    &__label::before{
+
+    &__label::before {
         content: "";
         display: inline-block;
         position: absolute;
@@ -800,75 +869,99 @@
         top: -1rem;
         transition: all .3s ease-in-out;
     }
-    
-    &__background{
+
+    &__background {
         height: 11rem;
         width: 11rem;
-        background-image: radial-gradient(ellipse,$color-primary,$color-secondary);
+        background-image: radial-gradient(ellipse, $color-primary, $color-secondary);
         border-radius: 50%;
         position: absolute;
         z-index: -1;
         top: 0;
-        transition: 1s all cubic-bezier(.41,.49,.06,.98);
-        
+        transition: 1s all cubic-bezier(.41, .49, .06, .98);
+
     }
-    &__content{
+
+    &__content {
         font-size: 5rem;
         @media only screen and (orientation:landscape) {
             font-size: 1.5rem;
         }
+
         color: white;
         // transform: scale(0.0125);
-        height: 100%;
+        height: 100vh;
         width: 0;
         transform: translate(-50vw);
         // margin-top: -1rem;
         visibility: hidden;
     }
-    &__list{
+
+    &__list {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        @media only screen and (orientation:landscape) {
-            gap: 3rem;
-        }
-        gap: 10rem;
         list-style: none;
+        height: 100%;
+        @media only screen and (orientation:landscape) {
+            gap: 5rem;
+            font-size: 2rem;
+            
+        }
+        @media only screen and (max-width:43.75em) {
+            height: 100%;
+            justify-content: space-evenly;
+            align-items: center;
+            font-size: 3rem;
+            text-align: center;
+        }
     }
-    &__link,&__link:active{
+
+    &__link,
+    &__link:active {
         height: 100%;
         color: $color-white-dark;
         text-decoration: none;
         transition: all .3s ease-in-out;
+
+        @media only screen and (max-width:43.75em) {
+            font-size: inherit;
+        }
     }
-    &__link:hover{
+
+    &__link:hover {
         background-color: $color-white-light;
         color: $color-primary;
     }
-    &__check{
-        // display: none;
+
+    &__check {
         position: absolute;
         height: 100%;
-        width:100%;
+        width: 100%;
         top: 0;
         left: 0;
         opacity: 0;
     }
-    &__check:checked ~ &__background{
+
+    &__check:checked~&__background {
         transform: scale(80);
     }
-    &__check:checked ~ &__label::after{
-        transform:rotate(135deg);
+
+    &__check:checked~&__label::after {
+        transform: rotate(135deg);
         top: -1rem;
     }
-    &__check:checked ~ &__label::before{
-        transform:rotate(-135deg);
+
+    &__check:checked~&__label::before {
+        transform: rotate(-135deg);
     }
-    &__check:checked ~ &__label{
+
+    &__check:checked~&__label {
         background-color: transparent;
     }
-    &__check:checked ~ &__content{
+
+    &__check:checked~&__content {
         visibility: visible;
     }
-    
+
 }

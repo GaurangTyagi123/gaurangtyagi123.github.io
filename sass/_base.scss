@@ -7,87 +7,147 @@ $color-white-dark : #fff;
 $color-grey-light : #777;
 $color-grey-dark : #666;
 
+@property --bg {
+    syntax: "<percentage>";
+    initial-value: 0%;
+    inherits: false;
+}
 
 @keyframes slide {
-    0%{
+    0% {
         transform: translateX(-5rem);
         opacity: 0;
     }
-    100%{
+
+    100% {
         // transform: translateX(0rem);
         opacity: 1;
     }
 }
+
 @keyframes slide_vertical {
-    0%{
+    0% {
         transform: translateY(-5rem);
         opacity: 0;
-    }    
-    100%{
+    }
+
+    100% {
         opacity: 1;
     }
 }
-*,*::after,*::before{
+
+@keyframes backgroundAnimation {
+    to {
+        --bg: 10%;
+    }
+}
+
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
     // outline: 2px solid lime;
     box-sizing: inherit;
 }
-html{
+
+html {
     font-size: 62.5%;
     scroll-behavior: smooth;
     scroll-padding: 10rem;
-    @media only screen and (max-width:81.25em){
-        font-size: 50%;
+
+    @media only screen and (max-width:68.75em) {
+        font-size: 50%;        
     }
-    @media only screen and (max-width: 65.635em) {
-        font-size: 37.5%;
+    @media only screen and (max-width:56.25em) {
+        font-size: 43.75%;        
     }
-    @media only screen and (max-width: 25em) {
-        font-size: 30%;
+    @media only screen and (max-width:46.875em) {
+        font-size: 37.5%;        
     }
+    // @media only screen and (max-width:81.25em) {
+    //     font-size: 50%;
+    // }
+
+    // @media only screen and (max-width: 65.635em) {
+    //     font-size: 37.5%;
+    // }
+
+    // @media only screen and (max-width: 25em) {
+    //     font-size: 30%;
+    // }
+
     font-family: sans-serif;
 }
-body{
+
+body {
     box-sizing: border-box;
-    padding: 0 2rem;
-    transition: all .3s ease-in-out ;
-    @media only screen and (max-width: 65.635em) {
-        padding: 0;
-    }
+    // padding: 0 2rem;
+    transition: all .3s ease-in-out;
+
+    // @media only screen and (max-width: 65.635em) {
+    //     padding: 0;
+    // }
 }
-.container{
+
+.container {
     display: grid;
-    height: 100rem;
-    width: 100%;
-    grid-template-rows: minmax(10vh,1fr) minmax(70vh,1fr) minmax(100vh,max-content) 60vh 100vh minmax(80vh,1fr) 1fr 80vh 80vh;
-    grid-template-columns: repeat(2,1fr);
-    @media only screen and (max-width:81.25rem) {
-        grid-template-rows: minmax(10vh,1fr) minmax(60vh,1fr) minmax(100vh,max-content) 60vh 90vh minmax(80vh,1fr) 1fr 60vh 80vh;
+    height: clamp(100rem,100vh,100vh);
+    width: clamp(100%,100vw,100vw);
+    // grid-template-rows: minmax(0vh,1fr) minmax(100vh,1fr) minmax(100vh,max-content) 60vh 100vh minmax(80vh,1fr) 1fr 80vh 80vh;
+
+    grid-template-rows: 0vh 100vh 100vh 75vh 100vh 75vh max-content 80vh 75vh ;
+    grid-template-columns: repeat(2, minmax(min-content,1fr));
+    @media only screen and (max-width:40.635em) {
+        grid-template-rows: 0vh 100vh 100vh 75vh 100vh 75vh max-content 100vh 80vh 50vh ;
+        grid-template-columns: 1fr;
+        
     }
-    @media only screen and (max-width: 65.635em) {
-        grid-template-rows: minmax(10vh,1fr) minmax(50vh,1fr) minmax(100vh,max-content) 60vh 80vh minmax(80vh,1fr) 1fr 50vh 70vh;
-    }
-    @media only screen and (max-width: 37.5em) {
-        grid-template-rows: minmax(0vh,1fr) minmax(50vh,1fr) minmax(110vh,max-content) 60vh 80vh minmax(80vh,1fr) 1fr 50vh 50vh;
-    }
-    @media only screen and (max-width: 25em) {
-        grid-template-rows: minmax(10vh,1fr) minmax(40vh,1fr) minmax(60vh,max-content) 40vh 70vh minmax(60vh,1fr) 1fr 50vh 30vh;
-    }
-    @media only screen and (orientation:landscape) {
-        grid-template-rows: minmax(10vh,1fr) 80vh minmax(100vh,max-content) 60vh 100vh minmax(80vh,1fr) 1fr 100vh 80vh;
-    }
-    
+
+    // @media only screen and (max-width:81.25rem) {
+    //     grid-template-rows: minmax(0vh,1fr) minmax(70vh,1fr) minmax(100vh,max-content) 60vh 90vh minmax(80vh,1fr) 1fr 60vh 80vh;
+    //     // grid-template-rows: repeat(auto-fit, minmax(100vh, 1fr));
+
+    // }
+
+    // @media only screen and (max-width: 65.635em) {
+    //     grid-template-rows: minmax(0vh, 1fr) minmax(100vh, 1fr) minmax(100vh, max-content) 60vh 80vh minmax(80vh, 1fr) 1fr 50vh 70vh;
+    //     // grid-template-rows: repeat(auto-fit, minmax(100vh, 1fr));
+    // }
+
+    // @media only screen and (max-width: 37.5em) {
+    //     grid-template-rows: minmax(0vh, 1fr) minmax(100vh, 1fr) minmax(110vh, max-content) 60vh 80vh minmax(80vh, 1fr) 1fr 50vh 50vh;
+    //     // grid-template-rows: repeat(auto-fit, minmax(100vh, 1fr));
+    // }
+
+    // @media only screen and (max-width: 25em) {
+    //     grid-template-rows: minmax(0vh, 1fr) minmax(90vh, 1fr) minmax(60vh, max-content) 40vh 70vh minmax(60vh, 1fr) 1fr 50vh 30vh;
+    //     // grid-template-rows: repeat(auto-fit, minmax(100vh, 1fr));
+
+    // }
+
+    // @media only screen and (orientation:landscape) {
+    //     grid-template-rows: minmax(0vh, 1fr) 100vh minmax(100vh, max-content) 60vh 100vh minmax(80vh, 1fr) 1fr 100vh 80vh;
+    //     // grid-template-rows: repeat(auto-fit, minmax(100vh, 1fr));
+
+    // }
+
 }
-section{
+
+section {
     opacity: 0.3;
     transition: all .3s ease-in-out;
 }
-.show{
+
+.show {
     opacity: 1;
 }
 
-::selection{
-    color:$color-primary;
+.animate {
+    animation: backgroundAnimation 1s forwards ease-in-out;
+}
+
+::selection {
+    color: $color-primary;
     background-color: white;
 }

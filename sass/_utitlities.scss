@@ -1,7 +1,7 @@
 .-u-before{
-    position: relative;
-    margin-bottom: 5rem;
-    margin-left: .5rem;
+    position: relative !important;
+    margin-bottom: 5rem !important;
+    margin-left: .5rem !important;
 }
 .-u--white{
     color:white !important;
@@ -20,7 +20,7 @@
     transition: all .3s ease-in-out;
 }
 .-u-before:hover::before{
-    width: 33rem;
+    width: 33rem !important;
 }
 
 .-u-ptop{
@@ -31,5 +31,5 @@
     grid-column: 1/-1;
 }
 .-u--primary{
-    color:$color-primary;
+    color:$color-primary !important;
 }
