@@ -410,7 +410,7 @@ section {
   gap: 1.5rem;
 }
 
-.experience .carrerProfile {
+.experience .careerProfile {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -419,7 +419,7 @@ section {
   position: relative;
 }
 
-.experience .carrerProfile__heading {
+.experience .careerProfile__heading {
   display: inline-block;
   font-size: 2.6rem;
   font-weight: 300;
@@ -429,7 +429,7 @@ section {
   padding-top: .5rem;
 }
 
-.experience .carrerProfile::after {
+.experience .careerProfile::after {
   content: "";
   display: inline-block;
   position: absolute;
@@ -442,12 +442,12 @@ section {
   transition: all .3s ease-in-out;
 }
 
-.experience .carrerProfile:hover::after {
+.experience .careerProfile:hover::after {
   width: 100%;
   cursor: default;
 }
 
-.experience .carrerProfile__list {
+.experience .careerProfile__list {
   display: flex;
   flex-direction: column;
   height: 50%;
