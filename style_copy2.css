@@ -54,7 +54,6 @@ body {
 .container {
   display: grid;
   height: clamp(100rem, 100vh, 100vh);
-  width: clamp(100%, 100vw, 100vw);
   grid-template-rows: 0vh 100vh 100vh 75vh 100vh 75vh max-content 80vh 75vh;
   grid-template-columns: repeat(2, minmax(min-content, 1fr)); }
 
