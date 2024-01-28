@@ -217,6 +217,7 @@ section {
   font-size: 1.5rem;
   font-weight: 600;
   text-transform: capitalize;
+  text-align:center;
   line-height: 3rem;
   color: #d9534f;
   animation: slide_vertical 1s ease-in-out; }
