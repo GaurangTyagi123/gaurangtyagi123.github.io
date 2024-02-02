@@ -69,14 +69,23 @@ html {
 body {
   box-sizing: border-box;
   transition: all .3s ease-in-out;
+  overflow-y: hidden;
 }
 
 .container {
   display: grid;
-  height: clamp(100rem, 100vh, 100vh);
-  width: clamp(100%, 100vw, 100vw);
+  height: 100vh;
+  overflow-x: hidden;
   grid-template-rows: 0vh 100vh 100vh 75vh 100vh 75vh max-content 80vh 75vh;
   grid-template-columns: repeat(2, minmax(min-content, 1fr));
+}
+.container::-webkit-scrollbar{
+  width: .5rem;
+  background-color: #eee;
+}
+.container::-webkit-scrollbar-thumb{
+  background-color: #777;
+  border-radius: 2rem;
 }
 
 @media only screen and (max-width: 40.635em) {
@@ -89,7 +98,7 @@ body {
 section {
   opacity: 0.3;
   transition: all .3s ease-in-out;
-  padding: 0 2rem;
+  padding: 0 !important;
 }
 
 .show {
@@ -125,6 +134,7 @@ section {
   font-weight: 500;
   line-height: 8rem;
   letter-spacing: .2rem;
+  margin-left: 2.5rem;
   color: #000;
   animation: slide_vertical 1s ease-in-out;
 }
@@ -218,17 +228,18 @@ section {
 .profile__container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   height: 100%;
-  width: 100%;
-  padding: 5rem 25rem;
+  width: 75%;
+  /* padding: 5rem 25rem; */
 }
 
 @media only screen and (max-width: 43.75em) {
   .profile__container {
     align-items: center;
   }
+
 }
 
 .profile__photo {
@@ -244,6 +255,8 @@ section {
   transition: all .3s;
 }
 
+
+
 .profile__photo:hover {
   transform: scale(1);
   filter: brightness(100%);
@@ -255,7 +268,20 @@ section {
   font-weight: 600;
   text-transform: uppercase;
   color: #4d4d4d;
-  text-align: center;
+  text-align: initial;
+}
+
+@media only screen and (max-width: 43.75em) {
+  .profile__name {
+    text-align: center;
+    /* font-size: 3rem; */
+  }
+
+  .profile__photo {
+    width: 25rem;
+    height: 25rem;
+    margin-bottom: 5rem;
+  }
 }
 
 .profile__designation {
@@ -276,8 +302,12 @@ section {
 
 @media only screen and (max-width: 43.75em) {
   .contact {
-    width: 90%;
+    width: 100%;
     height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
   }
 }
 
@@ -293,25 +323,26 @@ section {
   letter-spacing: .3rem;
   align-self: center;
   color: #fff;
-  border-bottom: 1px solid #fff;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2rem;
   position: relative;
   overflow-wrap: break-word;
 }
 
 @media only screen and (max-width: 43.75em) {
   .contact__heading {
-    font-size: 3.5rem;
+    font-size: 5rem;
   }
 }
 
 .contact__details {
-  height: 100%;
+  height: 90%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   align-items: baseline;
   justify-content: space-evenly;
-  margin-right: 5rem;
-  text-wrap: balance;
 }
 
 .contact__icon {
@@ -330,7 +361,14 @@ section {
 
 @media only screen and (max-width: 43.75em) {
   .contact .detail {
-    font-size: 1.6rem;
+    font-size: 2rem;
+  }
+  .contact{
+    text-align: initial;
+    margin: 0 5rem;
+  }
+  .contact__details{
+    margin: 0 3rem;
   }
 }
 
@@ -377,7 +415,7 @@ section {
 }
 
 .education .year {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #d9534f;
   font-style: italic;
 }
@@ -385,10 +423,11 @@ section {
 .education .institution {
   font-family: "Roboto";
   font-weight: 200;
-  font-size: 1.3rem;
+  font-size: 1.7rem;
   width: 80%;
   color: #555;
-  /* font-family: 'Times New Roman', Times, serif; */
+  text-align: start;
+  font-family: 'Times New Roman', Times, serif;
   margin-top: 1.5rem;
   overflow-wrap: break-word;
 }
@@ -409,6 +448,7 @@ section {
   align-items: baseline;
   background-color: #eeeeee;
   gap: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .experience .careerProfile {
@@ -456,7 +496,6 @@ section {
   color: #2b2b2b;
   list-style: circle;
   width: 90%;
-  font-size: 1.2rem;
 }
 
 .experience .adminAssignment {
@@ -502,7 +541,6 @@ section {
   color: #2b2b2b;
   list-style: circle;
   width: 90%;
-  font-size: 1.2rem;
   height: 50%;
 }
 
@@ -551,7 +589,6 @@ section {
   color: #2b2b2b;
   list-style: circle;
   width: 90%;
-  font-size: 1.2rem;
   height: 50%;
 }
 
@@ -592,7 +629,7 @@ section {
   flex-direction: column;
   gap: 2.5rem;
   align-items: baseline;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: #5e5e5e;
   width: 90%;
 }
@@ -693,7 +730,8 @@ section {
   display: grid;
   align-items: center;
   justify-content: center;
-  margin-left: 3rem;
+  margin: 0 3rem;
+  padding: 5rem 0;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(6, 1fr);
   gap: 3rem;
@@ -722,8 +760,8 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 10rem;
+  justify-content: space-evenly;
+  /* gap: 10rem; */
   background-color: #eeeeee;
 }
 
@@ -744,17 +782,19 @@ section {
 
 .book__list {
   display: grid;
-  margin-left: 2.5rem;
-  grid-template-rows: repeat(auto-fit, 1fr);
-  grid-template-columns: repeat(3, 1fr);
+  /* margin-left: 2.5rem; */
+  /* grid-template-rows: repeat(auto-fit, 1fr); */
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  margin: 0 5rem;
   grid-auto-rows: max-content;
   justify-items: center;
-  gap: 1rem;
+  gap: 1rem 2rem;
   font-size: 1.2rem;
   font-weight: 300;
   line-height: 2rem;
   color: #4d4d4d;
   overflow-wrap: break-word;
+  padding: 10rem 0;
 }
 
 .awards {
@@ -777,17 +817,17 @@ section {
 .awards__heading {
   font-size: 4rem;
   color: #eeeeee;
-  border-bottom: 1px solid #fff;
-  padding-bottom: 5rem;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2rem;
 }
 
 .awards__list {
   font-size: 1.5rem;
-  font-style: italic;
   color: #c4c4c4;
   line-height: 2rem;
   list-style: circle;
-  margin-left: 2.5rem;
+  margin: 0 2.5rem;
   overflow-wrap: break-word;
 }
 
@@ -812,10 +852,10 @@ section {
 
 .association__heading {
   font-size: 3rem;
-  margin-top: -4rem;
   color: #777;
-  border-bottom: 1px solid black;
-  padding-bottom: 5rem;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2rem;
 }
 
 @media only screen and (max-width: 43.75em) {
@@ -827,7 +867,6 @@ section {
 
 .association__list {
   font-size: 1.5rem;
-  font-style: italic;
   color: #666;
   line-height: 2rem;
   list-style: circle;
@@ -867,7 +906,7 @@ section {
   position: fixed;
   z-index: 30;
   top: 0;
-  right: 0;
+  left: 5%;
   margin-right: 5rem;
   margin-top: 5rem;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.6);
@@ -929,10 +968,17 @@ section {
 .hamburger__content {
   font-size: 5rem;
   color: white;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 90vh;
   width: 0;
-  transform: translate(-50vw);
+  transform: translate(40vw);
   visibility: hidden;
+}
+.hamburger__list-item{
+  text-align: center;
 }
 
 @media only screen and (orientation: landscape) {
@@ -972,6 +1018,7 @@ section {
   color: #fff;
   text-decoration: none;
   transition: all .3s ease-in-out;
+  padding: 3rem;
 }
 
 @media only screen and (max-width: 43.75em) {
@@ -986,7 +1033,10 @@ section {
   background-color: #eeeeee;
   color: #7f0d46;
 }
-
+.hamburger__link--active {
+  background-color: #eeeeee;
+  color: #7f0d46 ;
+}
 .hamburger__check {
   position: absolute;
   height: 100%;
@@ -1020,7 +1070,7 @@ section {
 .-u-before {
   position: relative !important;
   margin-bottom: 5rem !important;
-  margin-left: .5rem !important;
+  margin-left: 2.5rem !important;
 }
 
 .-u--white {

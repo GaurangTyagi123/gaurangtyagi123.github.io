@@ -7,8 +7,10 @@ const observer = new IntersectionObserver((enteries => {
         if (entry.isIntersecting) {
             entry.target.classList.add("show");
             tab = document.querySelector(`.college li:has(a[href="#${entry.target.id}"`)
+            hamTab = document.querySelector(`.hamburger__list li:has(a[href="#${entry.target.id}"`)
             if (tab) {
                 tab.classList.add("college__list__item--active")
+                hamTab.firstChild.classList.add("hamburger__link--active")
             }
         }
         else {
@@ -16,8 +18,12 @@ const observer = new IntersectionObserver((enteries => {
                 entry.target.classList.remove("animate")
             entry.target.classList.remove("show");
             tab = document.querySelector(`.college li:has(a[href="#${entry.target.id}"`);
-            if (tab)
+            hamTab = document.querySelector(`.hamburger__list li:has(a[href="#${entry.target.id}"`)
+            if (tab) {
                 tab.classList.remove("college__list__item--active")
+                hamTab.firstChild.classList.remove("hamburger__link--active")
+
+            }
         }
     })
 }), { threshold: .2 })
