@@ -39,12 +39,12 @@
   padding: 0;
   box-sizing: inherit;
   text-align: justify;
+  scroll-behavior: smooth;
+  scroll-padding: 10rem;
 }
 
 html {
   font-size: 62.5%;
-  scroll-behavior: smooth;
-  scroll-padding: 10rem;
   font-family: sans-serif;
 }
 
