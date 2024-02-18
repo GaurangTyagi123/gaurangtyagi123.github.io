@@ -84,6 +84,8 @@ body {
   overflow-x: hidden;
   grid-template-rows: 0vh 100vh 100vh 75vh 100vh 75vh max-content 80vh 75vh;
   grid-template-columns: repeat(2, minmax(min-content, 1fr));
+  scroll-behavior: smooth;
+  scroll-padding: 10rem;
 }
 
 .container::-webkit-scrollbar {
