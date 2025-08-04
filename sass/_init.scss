@@ -1,0 +1,39 @@
+*,*::after,*::before{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+html{
+    font-size: 62.5%;
+    background: radial-gradient(at center,$background-color,lighten($background-color,5)) ;
+    color : #fff;
+    font-family: $font-poppins;
+}
+@media (min-width:75em){
+    html{
+        font-size: 55%;
+    }
+}
+@media (max-width:62.5em){
+    html{
+        font-size: 50%;
+    }
+}
+@media (max-width:50em){
+    html{
+        font-size: 31.25%;
+    }
+}
+@media (max-width:31.25em){
+    html{
+        font-size: 25%;
+    }
+}
+::-webkit-scrollbar{
+    width: .8rem;
+}
+::-webkit-scrollbar-thumb{
+    background-color: $color-primary;
+    border-radius: 1rem;
+}

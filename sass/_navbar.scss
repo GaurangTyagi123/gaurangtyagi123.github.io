@@ -1,0 +1,186 @@
+.navbar {
+    height: 10vh;
+    width: 100%;
+    border-radius: 0 0 1rem 1rem;
+    margin-block-end: 5rem;
+    color: #000;
+
+    &__list {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        list-style: none;
+        font-size: 1.2rem;
+        font-weight: 400;
+        letter-spacing: .2rem;
+        text-transform: uppercase;
+    }
+    
+
+    &__listitem {
+        height: 90%;
+        width: 100%;
+        color : $color-primary;
+        padding: 0 2rem;
+        margin-block-end:  1rem;
+        display: grid;
+        place-items: center;
+        cursor:pointer;
+    }
+    &__listitem:not(:last-child){
+        border-right: 1px solid #eee;
+    }
+    &__listlink{
+        text-decoration: none;
+        height: 100%;
+        width: 90%;
+        display: grid;
+        place-items: center;
+        border-radius: 0 0 2rem 2rem;
+        transition: all .3s ease-in-out;
+        color: #eee;
+        background-color:  $color-primary;
+        box-shadow: 0 0 2rem $color-primary;
+    }
+    &__listlink:hover{
+        color: $color-primary;
+        background-color: #eee;
+        box-shadow: 0 0 2rem #eee;
+    }
+
+}
+
+.hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+
+
+    &__image {
+        height: 35rem;
+        width: 35rem;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        justify-content: space-evenly;
+        gap: 3rem;
+        .hero__name {
+            font-size: 7.5rem;
+            font-weight: 200;
+            letter-spacing: .1em;
+        }
+
+        .hero__tagline {
+            width: 75%;
+            font-size: 1.3rem;
+            font-weight: 300;
+
+        }
+    }
+    &__link,&__link:visited{
+        align-self: center;
+        color: #eee;
+        text-decoration: none;
+        font-size: 1.8rem;
+        background-color: $color-primary;
+        padding: 1rem;
+        border-radius: 2rem;
+        box-shadow: 0 1.5rem 4rem $shadow-primary;
+        transition: all .3s ease-in-out;
+    }
+    &__link:hover{
+        translate: 0 -1.1rem;
+        scale: 1.1;
+        box-shadow: 0 1.5rem 4rem $shadow-secondary;
+    }
+    &__link:active{
+        scale: 1;
+        translate: 0 0rem;
+        box-shadow: 0 1.5rem 4rem $shadow-secondary;
+    }
+}
+.navbar__list__hamburger{
+    display: none;
+}
+@media (max-width:25em){
+    .navbar__list{
+        display: none;
+    }
+}
+@media (max-width:25em) {
+    .hamburger{
+        height: 15rem;
+        width: 15rem;
+        background-color: #373737;
+        position: fixed;
+        z-index: 20;
+        top: 5rem;
+        right: 5rem;
+        border-radius: 50%;
+    }
+    .hamburger span{
+        position: absolute;
+        height: 1rem ;
+        width: 60%;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        background-color: #eee;
+        transition: all .3s ease-in-out;
+    }
+    .hamburger span:nth-child(1){
+        top: 25%;
+    }
+    .hamburger span:nth-child(3){
+        top: 75%;
+    }
+    .hamburger[data-active=true] span:nth-child(1){
+        top: 50%;
+        translate: -50% -50%;
+        rotate: 45deg;
+    }
+    .hamburger[data-active=true] span:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger[data-active=true] span:nth-child(3){
+        top: 50%;
+        translate: -50% -50%;
+        rotate: -45deg;
+    }
+
+    .navbar__list__hamburger{
+        position: fixed;
+        z-index: 20;
+        right: -100%;
+        height: 100%;
+        width: 100%;
+        background-color: $background-color;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        transition: right .3s ease-in-out;
+        .navbar__listitem{
+            height: 10rem;
+            border: none;            
+        }
+    }
+}
+@media (max-width:25em){
+    .hero{
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem
+    };
+}
