@@ -118,13 +118,21 @@ html {
   width: 40rem;
   border-radius: 50%;
   scale: 1.01;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   filter: grayscale(60%);
   position: relative;
   outline: 1px solid #1F51FF;
   box-shadow: 0 .1rem .8rem #1F51FF;
+  animation: slide-left 1s ease-in-out forwards;
   transition: all .3s ease-in-out;
+}
+
+@keyframes slide-left {
+  from {
+    translate: 3rem 0rem;
+  }
+
 }
 
 .hero__image:hover {
@@ -138,9 +146,17 @@ html {
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-evenly;
+  animation: slide-right 1s ease-in-out  forwards ;
   gap: 3rem;
 }
-
+@keyframes slide-right {
+  from{
+    translate: -3 rem 0;
+  }
+  to{
+    translate: 0 0;
+  }
+}
 .hero__content .hero__name {
   font-size: 7.5rem;
   font-weight: 200;
@@ -414,11 +430,7 @@ html {
   }
 }
 
-@keyframes slide-right {
-  to {
-    width: 100%;
-  }
-}
+
 
 .aboutMe {
   height: 70vh;

@@ -15,7 +15,7 @@ A single page application for booking adventure tours.
 - 🔧 **Tech Stack**: MERN (MongoDB, Express.js, React.js, Node.js), Stripe API
 - 💳 Integrated **Stripe** for secure credit card payments
 - 📈 Clean and responsive UI for browsing and booking tours
-- 🔗 [Live Demo](#) | [Repo](#)
+- 🔗 [Live Demo](https://natours-kyf5.onrender.com) | [Repo](https://github.com/GaurangTyagi123/natours)
 
 ---
 
@@ -26,7 +26,7 @@ A React-based PWA to monitor global air quality and weather forecasts.
 - 🔧 **Tech Stack**: React, Progressive Web App (PWA)
 - 🗺️ **Interactive global map** to check air pollution levels
 - 📌 Displays **UN and government resources** based on your location
-- 🔗 [Live Demo](#) | [Repo](#)
+- 🔗 [Live Demo](https://gaurangtyagi123.github.io/Pollutrack/dist) | [Repo](https://github.com/GaurangTyagi123/Pollutrack)
 
 ---
 
@@ -37,7 +37,7 @@ A web app for managing cabin bookings with real-time statistics.
 - 🔧 **Tech Stack**: MERN, react-chartjs-2
 - 📊 Features a dashboard for bookings (7/14/30 days), revenue, and occupancy
 - ✅ Enables staff to **check-in/check-out** guests efficiently
-- 🔗 [Live Demo](#) | [Repo](#)
+- 🔗 [Live Demo](https://theworldoasis.onrender.com) | [Repo](https://github.com/GaurangTyagi123/TheWorldOasis)
 
 ---
 
@@ -48,7 +48,7 @@ SPA to manage and visualize personal travel history.
 - 🔧 **Tech Stack**: MERN, Leaflet
 - 📍 **Map-based interface** to mark visited places and add notes
 - 🗂️ Keeps a log of trips, locations, and personal experiences
-- 🔗 [Live Demo](#) | [Repo](#)
+- 🔗 [Live Demo](https://worldwise-8j7s.onrender.com) | [Repo](https://github.com/GaurangTyagi123/Worldwise)
 
 ---
 
