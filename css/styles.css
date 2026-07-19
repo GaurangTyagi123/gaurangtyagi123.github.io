@@ -120,7 +120,7 @@ html {
   scale: 1.01;
   object-fit: cover;
   object-position: center;
-  filter: grayscale(60%);
+  filter: grayscale(40%);
   position: relative;
   outline: 1px solid #1F51FF;
   box-shadow: 0 .1rem .8rem #1F51FF;
@@ -355,7 +355,8 @@ html {
 .projects__project__imageForeground {
   width: 100%;
   height: 100%;
-  filter: grayscale(50%);
+  /* filter: grayscale(50%); */
+  filter: brightness(1);
   position: absolute;
 }
 
@@ -530,7 +531,6 @@ html {
   font-size: 1.2rem;
   font-family: "Poppins", "Times New Roman";
   letter-spacing: .2rem;
-  text-transform: uppercase;
 }
 
 .footer__contact>p>a {
